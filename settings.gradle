@@ -1,1 +1,1 @@
-include ':app', ':ajlog'
+include ':app', ':ajlog', ':ajotherlog'

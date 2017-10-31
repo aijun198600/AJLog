@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AJLog.iml" filepath="$PROJECT_DIR$/AJLog.iml" />
       <module fileurl="file://$PROJECT_DIR$/ajlog/ajlog.iml" filepath="$PROJECT_DIR$/ajlog/ajlog.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ajotherlog/ajotherlog.iml" filepath="$PROJECT_DIR$/ajotherlog/ajotherlog.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
