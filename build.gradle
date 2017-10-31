@@ -20,6 +20,21 @@ allprojects {
     }
 }
 
+subprojects {
+    apply plugin: 'maven'
+    apply plugin: 'com.github.dcendents.android-maven'
+}
+
 task clean(type: Delete) {
     delete rootProject.buildDir
+}
+
+subprojects.each { p ->
+    println "subproject: ${p.name}"
+    p.configurations.each { c ->
+        println "  ${c}"
+        c.dependencies.each { d ->
+            println "    ${d}"
+        }
+    }
 }
