@@ -34,3 +34,27 @@ dependencies {
     compile project (':ajotherlog')
     testCompile 'junit:junit:4.12'
 }
+
+
+artifacts {
+    archives file: file('libs/fastjson-1.2.39.jar'), name: 'fastjson', type: 'jar'
+//    archives jar
+}
+
+//jar {
+//    baseName = project.name
+//    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+//}
+
+install {
+    repositories {
+        mavenInstaller {
+            addFilter('fastjson') {artifact, file ->
+                artifact.name == 'fastjson'
+            }
+//            addFilter('jadx-core') {artifact, file ->
+//                artifact.name == 'jadx-core'
+//            }
+        }
+    }
+}
