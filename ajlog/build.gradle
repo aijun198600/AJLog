@@ -37,7 +37,7 @@ dependencies {
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.github.aijun198600.AJLog:fastjson:1.1.10@jar'
     compile 'com.github.aijun198600.AJLog:jsoup:1.1.10@jar'
-    compile project (':ajotherlog')
+//    compile project (':ajotherlog')
     testCompile 'junit:junit:4.12'
 }
 
@@ -47,16 +47,20 @@ dependencies {
 //    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
 //}
 
-//artifacts {
+artifacts {
+    archives file: file('libs/ajotherlog-release.aar'), name: 'ajotherlog', type: 'aar'
 //    archives file: file('libs/fastjson-1.2.39.jar'), name: 'fastjson', type: 'jar'
 //    archives file: file('libs/jsoup-1.10.3.jar'), name: 'jsoup', type: 'jar'
 //    archives jar
-//}
+}
 
 
-//install {
-//    repositories {
-//        mavenInstaller {
+install {
+    repositories {
+        mavenInstaller {
+            addFilter('ajotherlog') {artifact, file ->
+                artifact.name == 'ajotherlog'
+            }
 //            addFilter('fastjson') {artifact, file ->
 //                artifact.name == 'fastjson'
 //            }
@@ -66,6 +70,6 @@ dependencies {
 //            addFilter('ajlog') {artifact, file ->
 //                artifact.name == 'ajlog'
 //            }
-//        }
-//    }
-//}
+        }
+    }
+}
